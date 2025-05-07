@@ -1,27 +1,58 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ILVIAN</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ILVIAN</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="ILVIAN Logo" class="logo">
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Products</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
-    <main>
-        <h1>Welcome to ILVIAN</h1>
-        <p>Explore our premium trousers, tees, hoodies, and more.</p>
-    </main>
-    <footer>
-        <p>Contact us via WhatsApp, Messenger, Facebook, or Instagram.</p>
-    </footer>
+  <header class="flex justify-between items-center p-4 border-b shadow-sm">
+    <div class="flex items-center gap-4">
+      <button class="text-2xl">&#9776;</button>
+      <button>
+        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </button>
+    </div>
+    <div class="text-xl font-bold">ILVIAN</div>
+    <div class="flex items-center gap-4">
+      <button>
+        <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.1 0-9.4 1.6-9.4 4.7V22h18.8v-2.9c0-3.1-6.3-4.7-9.4-4.7z"/>
+        </svg>
+      </button>
+      <button>
+        <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M6 6h15l-1.5 9h-13L6 6zm2.1 12a2 2 0 110 4 2 2 0 010-4zm9.8 0a2 2 0 110 4 2 2 0 010-4z"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <nav class="bg-white shadow">
+    <ul class="flex justify-center gap-8 p-4 font-medium">
+      <li class="group relative">
+        <button>Men</button>
+        <ul class="absolute left-0 mt-2 hidden group-hover:block bg-white shadow-md rounded p-2 space-y-1">
+          <li><a href="/men/pants.html">Pants</a></li>
+          <li><a href="/men/trousers.html">Trousers</a></li>
+          <li><a href="/men/tshirt.html">T-Shirts</a></li>
+          <li><a href="/men/shirt.html">Shirts</a></li>
+        </ul>
+      </li>
+      <li class="group relative">
+        <button>Women</button>
+        <ul class="absolute left-0 mt-2 hidden group-hover:block bg-white shadow-md rounded p-2 space-y-1">
+          <li><a href="/women/abayas.html">Abayas</a></li>
+          <li><a href="/women/niqab.html">Niqab</a></li>
+          <li><a href="/women/borka.html">Borka</a></li>
+        </ul>
+      </li>
+      <li><a href="/kids/index.html">Kids</a></li>
+    </ul>
+  </nav>
 </body>
 </html>
