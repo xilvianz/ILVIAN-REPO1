@@ -32,3 +32,7 @@ body {
 .product-item:hover {
   transform: translateY(-5px);
 }
+a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
