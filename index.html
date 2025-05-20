@@ -3,40 +3,290 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ILVEAN WEAR</title>
+  <meta name="description" content="ILVIAN Wear - Premium Modest Fashion for Men, Women & Kids.">
+  <meta name="keywords" content="ILVIAN, modest fashion, men's wear, women's wear, trousers, t-shirts, borka, hijab, fragrance">
+  <meta name="author" content="ILVIAN">
+  <title>ILVIAN WEAR</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #111;
+      color: #eee;
+    }
+
+    header {
+      padding: 20px;
+      background: #111;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: #222;
+    }
+
+    .btn {
+      background: #444;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -260px;
+      width: 260px;
+      height: 100%;
+      background-color: #1a1a1a;
+      color: #eee;
+      transition: left 0.3s ease;
+      z-index: 1001;
+      overflow-y: auto;
+      padding: 20px;
+    }
+
+    .side-menu.active {
+      left: 0;
+    }
+
+    .side-menu ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .side-menu li {
+      margin-bottom: 12px;
+      cursor: pointer;
+    }
+
+    .side-menu a {
+      color: #eee;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .side-menu .submenu {
+      display: none;
+      margin-left: 15px;
+    }
+
+    .side-menu .has-submenu > span {
+      display: block;
+      cursor: pointer;
+    }
+
+    .side-menu .close-btn {
+      font-size: 24px;
+      color: #fff;
+      text-align: right;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    .bottom-navbar {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #1a1a1a;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 0;
+      z-index: 1000;
+    }
+
+    .bottom-navbar .nav-item svg {
+      width: 24px;
+      height: 24px;
+      stroke: white;
+    }
+
+    footer {
+      padding: 20px;
+      background: #111;
+      color: #ccc;
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 60px;
+    }
+
+    .social-links a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    .cart-panel {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 100%;
+      background-color: #222;
+      color: #fff;
+      z-index: 1002;
+      padding: 20px;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .clear-cart-btn {
+      background: #d00;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 4px;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Side Menu -->
+  <div id="sideMenu" class="side-menu">
+    <div class="close-btn" onclick="toggleMenu()">&times;</div>
+    <ul>
+      <li><a href="new.html">New Arrivals</a></li>
+      <li class="has-submenu">
+        <span>Men</span>
+        <ul class="submenu">
+          <li><a href="pant.html">Pant</a></li>
+          <li><a href="trouser.html">Trouser</a></li>
+          <li><a href="tshirt.html">T-shirt</a></li>
+          <li><a href="juubba.html">Juubba</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <span>Women</span>
+        <ul class="submenu">
+          <li><a href="women-tshirt.html">T-shirt</a></li>
+          <li><a href="borka.html">Borka</a></li>
+          <li><a href="abaya.html">Abaya</a></li>
+          <li><a href="hijab.html">Hijab</a></li>
+        </ul>
+      </li>
+      <li><a href="kids.html">Kids</a></li>
+      <li><a href="fragrance.html">Fragrance</a></li>
+    </ul>
+  </div>
+
+  <!-- Header -->
   <header>
-    <h1>ILVEAN WEAR</h1>
+    <h1>ILVIAN WEAR</h1>
     <nav>
-      <a href="men.html">Men</a>
-      <a href="women.html">Women</a>
-      <a href="kids.html">Kids</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html" style="color: #ccc;">Contact</a>
     </nav>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
     <h2>Premium Modest Fashion</h2>
     <p>Explore stylish, affordable clothing for all.</p>
-    <a href="men.html" class="btn">Shop Now</a>
+    <a href="new.html" class="btn">Shop Now</a>
   </section>
-<section class="categories">
-  <h2 style="text-align: center; margin-bottom: 20px;">Shop by Category</h2>
-  <div class="category-grid">
-    <a href="men.html" class="category-card">Men</a>
-    <a href="women.html" class="category-card">Women</a>
-    <a href="kids.html" class="category-card">Kids</a>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ILVIAN WEAR. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ilveanwear" target="_blank">Facebook</a> |
+      <a href="https://www.instagram.com/ilveanwear" target="_blank">Instagram</a> |
+      <a href="tel:+8801806567082">Call: +8801806567082</a>
+    </div>
+  </footer>
+
+  <!-- Cart Panel -->
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button id="closeCart">&times;</button>
+    </div>
+    <div id="cartContent"></div>
+    <div class="cart-footer">
+      <p id="totalPrice">Total: ৳0</p>
+      <button onclick="clearCart()" class="clear-cart-btn">Clear Cart</button>
+    </div>
   </div>
-</section>
-<footer>
-  <p>&copy; 2025 ILVEAN WEAR. All rights reserved.</p>
-  <div class="social-links">
-    <a href="https://www.facebook.com/ilveanwear" target="_blank">Facebook</a> |
-    <a href="https://www.instagram.com/ilveanwear" target="_blank">Instagram</a> |
-    <a href="tel:+8801806567082">Call: +8801806567082</a>
+
+  <!-- Bottom Navigation -->
+  <div class="bottom-navbar">
+    <a href="index.html" class="nav-item" title="Home">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7" stroke="white"></path>
+        <path d="M9 22V12h6v10" stroke="white"></path>
+      </svg>
+    </a>
+    <button id="menuToggle" class="nav-item" title="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12" stroke="white"></line>
+        <line x1="3" y1="6" x2="21" y2="6" stroke="white"></line>
+        <line x1="3" y1="18" x2="21" y2="18" stroke="white"></line>
+      </svg>
+    </button>
+    <a href="account.html" class="nav-item" title="Account">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="7" r="4" stroke="white"></circle>
+        <path d="M5.5 21a6.5 6.5 0 0 1 13 0" stroke="white"></path>
+      </svg>
+    </a>
+    <a href="#" class="nav-item" id="openCart" title="Cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="9" cy="21" r="1" stroke="white"></circle>
+        <circle cx="20" cy="21" r="1" stroke="white"></circle>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" stroke="white"></path>
+      </svg>
+    </a>
   </div>
-</footer>
+
+  <!-- Script -->
+  <script>
+    function toggleMenu() {
+      document.getElementById('sideMenu').classList.toggle('active');
+    }
+
+    document.getElementById('menuToggle').addEventListener('click', toggleMenu);
+
+    const openCartBtn = document.getElementById('openCart');
+    const closeCartBtn = document.getElementById('closeCart');
+    const cartPanel = document.getElementById('cartPanel');
+
+    openCartBtn.addEventListener('click', () => {
+      cartPanel.style.transform = 'translateX(0)';
+    });
+
+    closeCartBtn.addEventListener('click', () => {
+      cartPanel.style.transform = 'translateX(100%)';
+    });
+
+    function clearCart() {
+      localStorage.removeItem('cart');
+      document.getElementById('cartContent').innerHTML = '';
+      document.getElementById('totalPrice').innerText = 'Total: ৳0';
+      cartPanel.style.transform = 'translateX(100%)';
+      alert('Cart cleared!');
+    }
+
+    document.querySelectorAll('.side-menu .has-submenu > span').forEach(item => {
+      item.addEventListener('click', () => {
+        const submenu = item.nextElementSibling;
+        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
 </body>
 </html>

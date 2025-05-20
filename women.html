@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Women’s Collection - ILVEAN</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>ILVEAN WEAR</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="men.html">Men</a>
+      <a href="women.html">Women</a>
+      <a href="kids.html">Kids</a>
+      <a href="contact.html">Contact</a>
+      <a href="#" class="cart-icon" id="openCart">🛒</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Women’s Collection</h2>
+    <p>Explore stylish borkas, scarves, and more.</p>
+  </section>
+
+  <section class="product-grid">
+    <div class="product-card">
+      <h3>Elegant Black Borka</h3>
+      <p>Fabric: Premium Cotton | Size: Free Size</p>
+      <p>৳2200</p>
+      <button onclick="addToCart('Elegant Black Borka', '৳2200', 'Free Size', 'Premium Cotton')">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <h3>Silky Scarf</h3>
+      <p>Fabric: Silk Blend | Colors: Black, Grey, Navy</p>
+      <p>৳550</p>
+      <button onclick="addToCart('Silky Scarf', '৳550', 'One Size', 'Silk Blend')">Add to Cart</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 ILVEAN WEAR. All rights reserved.</p>
+  </footer>
+
+  <!-- Cart Slide Panel -->
+  <div class="cart-panel" id="cartPanel" style="display:none;">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button id="closeCart">&times;</button>
+    </div>
+    <div id="cartContent"></div>
+    <div class="cart-footer">
+      <p id="totalPrice">Total: ৳0</p>
+      <button onclick="clearCart()" class="clear-cart-btn">Clear Cart</button>
+    </div>
+  </div>
+
+  <script>
+    function addToCart(name, price, size, fabric) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ name, price, size, fabric });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(name + ' added to cart!');
+    }
+
+    const cartPanel = document.getElementById('cartPanel');
+    const openCartBtn = document.getElementById('openCart');
+    const closeCartBtn = document.getElementById('closeCart');
+    const cartContent = document.getElementById('cartContent');
+    const totalPriceEl = document.getElementById('totalPrice');
+
+    openCartBtn.addEventListener('click', () => {
+      updateCartDisplay();
+      cartPanel.style.display = 'block';
+    });
+
+    closeCartBtn.addEventListener('click', () => {
+      cartPanel.style.display = 'none';
+    });
+
+    function updateCartDisplay() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cartContent.innerHTML = '';
+
+      if (cart.length === 0) {
+        cartContent.innerHTML = '<p>Your cart is empty.</p>';
+        totalPriceEl.textContent = 'Total: ৳0';
+        return;
+      }
+
+      let total = 0;
+      cart.forEach((item, index) => {
+        const priceNum = Number(item.price.replace(/[^\d]/g, ''));
+
+        total += priceNum;
+
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'cart-item';
+        itemDiv.innerHTML = `
+          <p><strong>${item.name}</strong></p>
+          <p>Price: ${item.price}</p>
+          <p>Size: ${item.size}</p>
+          <p>Fabric: ${item.fabric}</p>
+          <button onclick="removeFromCart(${index})">Remove</button>
+        `;
+        cartContent.appendChild(itemDiv);
+      });
+
+      totalPriceEl.textContent = 'Total: ৳' + total;
+    }
+
+    function removeFromCart(index) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartDisplay();
+    }
+
+    function clearCart() {
+      localStorage.removeItem('cart');
+      updateCartDisplay();
+    }
+  </script>
+<!-- Side Menu -->
+<div class="side-menu" id="sideMenu">
+  <button class="close-btn" onclick="toggleMenu()">&times;</button>
+  <ul>
+    <li><a href="new.html">New Arrivals</a></li>
+    <li>
+      Men
+      <ul>
+        <li><a href="pant.html">Pant</a></li>
+        <li><a href="trouser.html">Trouser</a></li>
+        <li><a href="tshirt.html">T-Shirt</a></li>
+        <li><a href="jubba.html">Jubba</a></li>
+      </ul>
+    </li>
+    <li>
+      Women
+      <ul>
+        <li><a href="wtshirt.html">T-Shirt</a></li>
+        <li><a href="borka.html">Borka</a></li>
+        <li><a href="abaya.html">Abaya</a></li>
+        <li><a href="hijab.html">Hijab</a></li>
+      </ul>
+    </li>
+    <li><a href="kids.html">Kids</a></li>
+    <li><a href="fragrance.html">Fragrance</a></li>
+  </ul>
+</div>
+</body>
+</html>

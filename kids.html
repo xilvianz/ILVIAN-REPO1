@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kids’ Collection - ILVEAN</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>ILVEAN WEAR</h1>
+    <nav>
+  <a href="index.html">Home</a>
+  <a href="men.html">Men</a>
+  <a href="women.html">Women</a>
+  <a href="kids.html">Kids</a>
+  <a href="contact.html">Contact</a>
+  <a href="#" class="cart-icon" id="openCart">🛒</a>
+</nav>
+  </header>
+
+  <section class="hero">
+    <h2>Kids’ Collection</h2>
+    <p>Trendy and comfortable kids’ clothing.</p>
+  </section>
+
+  <section class="product-grid">
+    <div class="product-card">
+      <h3>Kids’ T-Shirt</h3>
+      <p>Fabric: Cotton | Size: 4-6, 6-8, 8-10</p>
+      <p>৳450</p>
+    </div>
+
+    <div class="product-card">
+      <h3>Kids’ Pants</h3>
+      <p>Fabric: Polyester Blend | Size: 4-6, 6-8, 8-10</p>
+      <p>৳600</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 ILVEAN WEAR. All rights reserved.</p>
+  </footer>
+<!-- Cart Slide Panel -->
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-header">
+    <h3>Your Cart</h3>
+    <button id="closeCart">&times;</button>
+  </div>
+  <div id="cartContent"></div>
+  <div class="cart-footer">
+    <p id="totalPrice">Total: ৳0</p>
+    <button onclick="clearCart()" class="clear-cart-btn">Clear Cart</button>
+  </div>
+</div>
+<!-- Side Menu -->
+<div class="side-menu" id="sideMenu">
+  <button class="close-btn" onclick="toggleMenu()">&times;</button>
+  <ul>
+    <li><a href="new.html">New Arrivals</a></li>
+    <li>
+      Men
+      <ul>
+        <li><a href="pant.html">Pant</a></li>
+        <li><a href="trouser.html">Trouser</a></li>
+        <li><a href="tshirt.html">T-Shirt</a></li>
+        <li><a href="jubba.html">Jubba</a></li>
+      </ul>
+    </li>
+    <li>
+      Women
+      <ul>
+        <li><a href="wtshirt.html">T-Shirt</a></li>
+        <li><a href="borka.html">Borka</a></li>
+        <li><a href="abaya.html">Abaya</a></li>
+        <li><a href="hijab.html">Hijab</a></li>
+      </ul>
+    </li>
+    <li><a href="kids.html">Kids</a></li>
+    <li><a href="fragrance.html">Fragrance</a></li>
+  </ul>
+</div>
+</body>
+</html>

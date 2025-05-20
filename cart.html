@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart - ILVEAN WEAR</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>ILVEAN WEAR</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="men.html">Men</a>
+      <a href="cart.html">View Cart</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Your Cart</h2>
+    <p>Review your selected items below.</p>
+  </section>
+
+  <section class="cart-items" id="cart-items">
+    <!-- Cart items will appear here -->
+  </section>
+<button onclick="clearCart()" class="clear-cart-btn">Clear Cart</button>
+  <footer>
+    <p>&copy; 2025 ILVEAN WEAR. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartContainer = document.getElementById('cart-items');
+
+    if (cartItems.length === 0) {
+      cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+    } else {
+      cartItems.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'product-card';
+        div.innerHTML = `
+  <h3>${item.name}</h3>
+  <p>Price: ${item.price}</p>
+  <p>Size: ${item.size}</p>
+  <p>Fabric: ${item.fabric}</p>
+  <button onclick="removeItem(${cartItems.indexOf(item)})">Remove</button>
+`;
+        cartContainer.appendChild(div);
+      });
+    }
+ function clearCart() {
+  localStorage.removeItem('cart');
+  location.reload();
+} 
+  function removeItem(index) {
+  cartItems.splice(index, 1);
+  localStorage.setItem('cart', JSON.stringify(cartItems));
+  location.reload();
+}
+  </script>
+<script src="script.js"></script>
+</body>
+</html>
