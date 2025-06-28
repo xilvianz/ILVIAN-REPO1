@@ -2,87 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ILVIAN - Men’s Collection</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ILVIAN - Men’s Products</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
+      padding: 20px;
       background: #fff;
-      color: #1F4045;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      border-bottom: 1px solid #eee;
-      background-color: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .logo {
-      font-weight: bold;
-      font-size: 1.5rem;
-    }
-
-    .nav-links a {
-      margin-left: 1.5rem;
-      text-decoration: none;
-      color: #1F4045;
-      font-weight: 500;
     }
 
     h1 {
       text-align: center;
-      margin: 2rem 0 1rem;
-      font-size: 28px;
+      margin-bottom: 30px;
     }
 
     .products {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
       gap: 20px;
-      padding: 0 2rem 3rem;
     }
 
     .product {
       text-align: center;
-      border: 1px solid #eee;
-      padding: 10px;
-      border-radius: 10px;
-      transition: box-shadow 0.2s ease;
-    }
-
-    .product:hover {
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
     .product img {
       width: 100%;
       height: auto;
-      border-radius: 8px;
+      border-radius: 10px;
     }
 
     .product-name {
       margin: 10px 0 5px;
       font-weight: bold;
-      font-size: 16px;
     }
 
     .product-price {
-      color: #111;
-      font-size: 15px;
-      margin-bottom: 5px;
-    }
-
-    .product-info {
-      color: #777;
-      font-size: 13px;
+      color: #555;
+      font-size: 14px;
     }
 
     .product a {
@@ -91,105 +49,87 @@
     }
 
     .product a:hover {
-      opacity: 0.95;
+      opacity: 0.8;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="logo">ILVIAN</div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="cart.html">Cart</a>
-    </div>
-  </header>
-
   <h1>Men’s Collection</h1>
 
   <div class="products">
-
+    <!-- Product 1 -->
     <div class="product">
-      <a href="#">
-        <img src="assets/products/men/men1.jpg" alt="Premium Cotton Shirt" />
-        <div class="product-name">Premium Cotton Shirt</div>
-        <div class="product-price">৳1,490</div>
-        <div class="product-info">Sizes: S, M, L, XL</div>
-        <div class="product-info">Fabric: 100% Cotton</div>
-      </a>
-    </div>
-
-    <div class="product">
-      <a href="#">
-        <img src="assets/products/men/men2.jpg" alt="Classic Casual Shirt" />
-        <div class="product-name">Classic Casual Shirt</div>
-        <div class="product-price">৳990</div>
-        <div class="product-info">Sizes: M, L, XL</div>
-        <div class="product-info">Fabric: Cotton-Poly Blend</div>
-      </a>
-    </div>
-
-    <div class="product">
-      <a href="#">
-        <img src="assets/products/men/men3.jpg" alt="Tailored Black Pants" />
-        <div class="product-name">Tailored Black Pants</div>
-        <div class="product-price">৳1,790</div>
-        <div class="product-info">Sizes: 30, 32, 34, 36</div>
-        <div class="product-info">Fabric: Stretch Twill</div>
-      </a>
-    </div>
-
-    <div class="product">
-      <a href="#">
-        <img src="assets/products/men/men4.jpg" alt="Essential White T-Shirt" />
-        <div class="product-name">Essential White T-Shirt</div>
-        <div class="product-price">৳690</div>
-        <div class="product-info">Sizes: S, M, L, XL</div>
-        <div class="product-info">Fabric: Soft Cotton</div>
-      </a>
-    </div>
-
-    <div class="product">
-      <a href="#">
-        <img src="assets/products/men/men5.jpg" alt="Streetwear Hoodie" />
-        <div class="product-name">Streetwear Hoodie</div>
-        <div class="product-price">৳1,990</div>
-        <div class="product-info">Sizes: M, L, XL, XXL</div>
-        <div class="product-info">Fabric: Fleece Cotton</div>
-      </a>
-    </div>
-
-    <div class="product">
-      <a href="#">
-        <img src="assets/products/men/men6.jpg" alt="Urban Tech Jacket" />
-        <div class="product-name">Urban Tech Jacket</div>
-        <div class="product-price">৳2,590</div>
-        <div class="product-info">Sizes: M, L, XL</div>
-        <div class="product-info">Fabric: Water-Repellent Nylon</div>
-      </a>
-    </div>
-
-    <div class="product">
-      <a href="#">
-        <img src="assets/products/men/men7.jpg" alt="Minimalist Sweater" />
-        <div class="product-name">Minimalist Sweater</div>
+      <a href="product1.html">
+        <img src="images/men1.jpg" alt="Formal Shirt">
+        <div class="product-name">Formal Shirt</div>
         <div class="product-price">৳1,290</div>
-        <div class="product-info">Sizes: S, M, L, XL</div>
-        <div class="product-info">Fabric: Cotton Knit</div>
       </a>
     </div>
 
+    <!-- Product 2 -->
     <div class="product">
-      <a href="#">
-        <img src="assets/products/men/men8.jpg" alt="Slim Fit Shorts" />
-        <div class="product-name">Slim Fit Shorts</div>
-        <div class="product-price">৳890</div>
-        <div class="product-info">Sizes: S, M, L</div>
-        <div class="product-info">Fabric: Cotton Twill</div>
+      <a href="product2.html">
+        <img src="images/men2.jpg" alt="Casual Shirt">
+        <div class="product-name">Casual Shirt</div>
+        <div class="product-price">৳990</div>
       </a>
     </div>
 
+    <!-- Product 3 -->
+    <div class="product">
+      <a href="product3.html">
+        <img src="images/men3.jpg" alt="Black Pant">
+        <div class="product-name">Black Pant</div>
+        <div class="product-price">৳1,590</div>
+      </a>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product">
+      <a href="product4.html">
+        <img src="images/men4.jpg" alt="White T-shirt">
+        <div class="product-name">White T-shirt</div>
+        <div class="product-price">৳690</div>
+      </a>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="product">
+      <a href="product5.html">
+        <img src="images/men5.jpg" alt="Hoodie">
+        <div class="product-name">Hoodie</div>
+        <div class="product-price">৳1,890</div>
+      </a>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="product">
+      <a href="product6.html">
+        <img src="images/men6.jpg" alt="Jacket">
+        <div class="product-name">Jacket</div>
+        <div class="product-price">৳2,490</div>
+      </a>
+    </div>
+
+    <!-- Product 7 -->
+    <div class="product">
+      <a href="product7.html">
+        <img src="images/men7.jpg" alt="Sweater">
+        <div class="product-name">Sweater</div>
+        <div class="product-price">৳1,390</div>
+      </a>
+    </div>
+
+    <!-- Product 8 -->
+    <div class="product">
+      <a href="product8.html">
+        <img src="images/men8.jpg" alt="Shorts">
+        <div class="product-name">Shorts</div>
+        <div class="product-price">৳790</div>
+      </a>
+    </div>
   </div>
+
 </body>
-</html>
+  </html>
