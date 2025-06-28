@@ -2,169 +2,117 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Men's Collection - ILVEAN WEAR</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ILVIAN - Men’s Collection</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fff;
+      color: #1F4045;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #eee;
+      background-color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .nav-links a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #1F4045;
+      font-weight: 500;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 2rem 0 1rem;
+      font-size: 28px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 0 2rem 3rem;
+    }
+
+    .product {
+      text-align: center;
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .product-name {
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    .product-price {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .product a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .product a:hover {
+      opacity: 0.8;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Navbar -->
   <header>
-    <h1>ILVEAN WEAR</h1>
-    <nav>
+    <div class="logo">ILVIAN</div>
+    <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="men.html">Men</a>
-      <a href="women.html">Women</a>
-      <a href="kids.html">Kids</a>
-      <a href="contact.html">Contact</a>
-      <a href="#" class="cart-icon" id="openCart">🛒</a>
-    </nav>
+      <a href="cart.html">Cart</a>
+    </div>
   </header>
 
-  <section class="hero">
-    <h2>Men’s Collection</h2>
-    <p>Stylish, comfortable, and affordable clothing for men.</p>
-  </section>
+  <h1>Men’s Collection</h1>
 
-  <section class="product-grid">
-    <div class="product-card">
-      <h3>Classic Black Pant</h3>
-      <p>Price: ৳950</p>
-      <p>Size: M, L, XL</p>
-      <p>Fabric: Premium Cotton</p>
-      <button onclick="addToCart('Classic Black Pant', '৳950', 'M, L, XL', 'Premium Cotton')">Add to Cart</button>
+  <div class="products">
+    <!-- Just update the image paths below to assets/products/men/ -->
+    <div class="product">
+      <a href="product1.html">
+        <img src="assets/products/men/men1.jpg" alt="Formal Shirt">
+        <div class="product-name">Formal Shirt</div>
+        <div class="product-price">৳1,290</div>
+      </a>
     </div>
 
-    <div class="product-card">
-      <h3>Stylish Dobby Trouser</h3>
-      <p>Price: ৳1200</p>
-      <p>Size: M, L, XL</p>
-      <p>Fabric: Dobby Cotton</p>
-      <button onclick="addToCart('Stylish Dobby Trouser', '৳1200', 'M, L, XL', 'Dobby Cotton')">Add to Cart</button>
+    <div class="product">
+      <a href="product2.html">
+        <img src="assets/products/men/men2.jpg" alt="Casual Shirt">
+        <div class="product-name">Casual Shirt</div>
+        <div class="product-price">৳990</div>
+      </a>
     </div>
 
-    <div class="product-card">
-      <h3>Casual White T-shirt</h3>
-      <p>Price: ৳680</p>
-      <p>Size: S, M, L</p>
-      <p>Fabric: Soft Jersey</p>
-      <button onclick="addToCart('Casual White T-shirt', '৳680', 'S, M, L', 'Soft Jersey')">Add to Cart</button>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 ILVEAN WEAR. All rights reserved.</p>
-    <div class="social-links">
-      <a href="https://www.facebook.com/ilveanwear" target="_blank">Facebook</a> |
-      <a href="https://www.instagram.com/ilveanwear" target="_blank">Instagram</a> |
-      <a href="tel:+8801806567082">Call: +8801806567082</a>
-    </div>
-  </footer>
-
-  <!-- Cart Slide Panel -->
-  <div class="cart-panel" id="cartPanel">
-    <div class="cart-header">
-      <h3>Your Cart</h3>
-      <button id="closeCart">&times;</button>
-    </div>
-    <div id="cartContent"></div>
-    <div class="cart-footer">
-      <p id="totalPrice">Total: ৳0</p>
-      <button onclick="clearCart()" class="clear-cart-btn">Clear Cart</button>
-    </div>
+    <!-- Add more like above -->
   </div>
 
-  <script>
-    function addToCart(name, price, size, fabric) {
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      cart.push({ name, price, size, fabric });
-      localStorage.setItem('cart', JSON.stringify(cart));
-      alert(name + ' added to cart!');
-    }
-
-    const cartPanel = document.getElementById('cartPanel');
-    const openCartBtn = document.getElementById('openCart');
-    const closeCartBtn = document.getElementById('closeCart');
-    const cartContent = document.getElementById('cartContent');
-    const totalPriceEl = document.getElementById('totalPrice');
-
-    openCartBtn.addEventListener('click', () => {
-      updateCartDisplay();
-      cartPanel.style.display = 'block';
-    });
-
-    closeCartBtn.addEventListener('click', () => {
-      cartPanel.style.display = 'none';
-    });
-
-    function updateCartDisplay() {
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      cartContent.innerHTML = '';
-
-      if (cart.length === 0) {
-        cartContent.innerHTML = '<p>Your cart is empty.</p>';
-        totalPriceEl.textContent = 'Total: ৳0';
-        return;
-      }
-
-      let total = 0;
-      cart.forEach((item, index) => {
-        // Extract numeric value safely (remove currency and commas)
-        const priceNum = Number(item.price.replace(/[^\d]/g, ''));
-
-        total += priceNum;
-
-        const itemDiv = document.createElement('div');
-        itemDiv.className = 'cart-item';
-        itemDiv.innerHTML = `
-          <p><strong>${item.name}</strong></p>
-          <p>Price: ${item.price}</p>
-          <p>Size: ${item.size}</p>
-          <p>Fabric: ${item.fabric}</p>
-          <button onclick="removeFromCart(${index})">Remove</button>
-        `;
-        cartContent.appendChild(itemDiv);
-      });
-
-      totalPriceEl.textContent = 'Total: ৳' + total;
-    }
-
-    function removeFromCart(index) {
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      cart.splice(index, 1);
-      localStorage.setItem('cart', JSON.stringify(cart));
-      updateCartDisplay();
-    }
-
-    function clearCart() {
-      localStorage.removeItem('cart');
-      updateCartDisplay();
-    }
-  </script>
-<!-- Side Menu -->
-<div class="side-menu" id="sideMenu">
-  <button class="close-btn" onclick="toggleMenu()">&times;</button>
-  <ul>
-    <li><a href="new.html">New Arrivals</a></li>
-    <li>
-      Men
-      <ul>
-        <li><a href="pant.html">Pant</a></li>
-        <li><a href="trouser.html">Trouser</a></li>
-        <li><a href="tshirt.html">T-Shirt</a></li>
-        <li><a href="jubba.html">Jubba</a></li>
-      </ul>
-    </li>
-    <li>
-      Women
-      <ul>
-        <li><a href="wtshirt.html">T-Shirt</a></li>
-        <li><a href="borka.html">Borka</a></li>
-        <li><a href="abaya.html">Abaya</a></li>
-        <li><a href="hijab.html">Hijab</a></li>
-      </ul>
-    </li>
-    <li><a href="kids.html">Kids</a></li>
-    <li><a href="fragrance.html">Fragrance</a></li>
-  </ul>
-</div>
 </body>
 </html>
