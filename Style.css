@@ -1,1 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body, html {
+  height: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  z-index: 1000;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.icons svg {
+  width: 24px;
+  height: 24px;
+  fill: #333;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+nav {
+  position: fixed;
+  top: 50px;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  z-index: 999;
+}
+
+nav .tab {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+nav .tab.active {
+  font-weight: bold;
+  border-bottom: 2px solid #333;
+}
+
+main {
+  margin-top: 100px; /* header + nav height */
+}
+
+.product {
+  height: calc(100vh - 100px);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.product img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-info {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.product-info p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.product-info span {
+  display: block;
+  font-size: 1rem;
+  margin-top: 5px;
+}
