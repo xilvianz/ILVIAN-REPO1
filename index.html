@@ -2,176 +2,223 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ILVIAN | Dignified Comfort</title>
-
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: Helvetica, Arial, sans-serif;
-      background: #fff;
-      color: #333;
-    }
-
-    a { text-decoration: none; color: inherit; }
-
-    /* Floating Top Icons */
-    .top-icons {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      display: flex;
-      gap: 1rem;
-      z-index: 1000;
-    }
-
-    .top-icons svg {
-      width: 24px;
-      height: 24px;
-      fill: #333;
-      cursor: pointer;
-    }
-
-    /* Logo floating top left */
-    .logo {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      font-weight: bold;
-      font-size: 1.5rem;
-      letter-spacing: 2px;
-      z-index: 1000;
-    }
-
-    /* Category Title */
-    .category-title {
-      font-weight: bold;
-      font-size: 1.2rem;
-      margin: 70px 0 10px 10px;
-    }
-
-    /* Product Carousel */
-    .product-row {
-      display: flex;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      gap: 10px;
-      padding: 10px;
-    }
-
-    .product-card {
-      flex: 0 0 auto;
-      width: 160px;
-    }
-
-    .product-card img {
-      width: 100%;
-      border-radius: 5px;
-    }
-
-    .product-card p {
-      text-align: center;
-      font-size: 0.95rem;
-      margin-top: 5px;
-    }
-
-    .product-card span {
-      display: block;
-      text-align: center;
-      font-size: 0.85rem;
-      color: #555;
-    }
-
-    /* Hide scrollbar */
-    .product-row::-webkit-scrollbar { display: none; }
-    .product-row { -ms-overflow-style: none; scrollbar-width: none; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ILVIAN Store</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
-
 <body>
 
-  <!-- Floating Logo -->
-  <div class="logo">ILVIAN</div>
+  <header class="site-header">
+    <div class="logo">
+      <img src="images/logo.png" alt="ILVIAN Logo" />
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="men.html">Men</a></li>
+        <li><a href="women.html">Women</a></li>
+        <li><a href="kids.html">Kids</a></li>
+        <li><a href="fragrance.html">Fragrance</a></li>
+      </ul>
+    </nav>
+    <div class="header-icons">
+      <a href="search.html" class="icon search-icon" aria-label="Search"></a>
+      <a href="account.html" class="icon account-icon" aria-label="My Account"></a>
+      <a href="cart.html" class="icon cart-icon" aria-label="Shopping Cart"></a>
+    </div>
+  </header>
 
-  <!-- Floating Icons -->
-  <div class="top-icons">
-    <!-- Search Icon -->
-    <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zM10 14a4 4 0 110-8 4 4 0 010 8z"/></svg>
-    <!-- Account Icon -->
-    <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.2c-3.1 0-9.3 1.6-9.3 4.9v2.7h18.6v-2.7c0-3.3-6.2-4.9-9.3-4.9z"/></svg>
-    <!-- Cart Icon -->
-    <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 2 2 2-.9 2-2-.9-2-2-2zM7.16 14l-.94-2h11.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49-1.68-1L17.44 9H7.21L6.27 6H1v2h3l3.6 7.59-1.35 2.44C5.08 18.37 5 18.68 5 19c0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25L7.16 14z"/></svg>
-    <!-- Menu Icon -->
-    <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
-  </div>
+  <main>
 
-  <!-- MEN Category -->
-  <div class="category-title">MEN</div>
-  <div class="product-row" id="men-row">
-    <div class="product-card">
-      <img src="images/men1.jpg" alt="Men Product 1">
-      <p>Formal Shirt</p>
-      <span>৳1290</span>
-    </div>
-    <div class="product-card">
-      <img src="images/men2.jpg" alt="Men Product 2">
-      <p>T-shirt</p>
-      <span>৳790</span>
-    </div>
-    <!-- Repeat up to men8.jpg -->
-  </div>
+    <!-- MEN Category -->
+    <section class="category-section" id="men">
+      <h2 class="category-title">MEN</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="images/men1.jpg" alt="Men Product 1" />
+          <p>Shirt</p>
+          <span>৳1200</span>
+        </div>
+        <div class="product-card">
+          <img src="images/men2.jpg" alt="Men Product 2" />
+          <p>Trousers</p>
+          <span>৳1400</span>
+        </div>
+        <div class="product-card">
+          <img src="images/men3.jpg" alt="Men Product 3" />
+          <p>Jacket</p>
+          <span>৳3200</span>
+        </div>
+        <div class="product-card">
+          <img src="images/men4.jpg" alt="Men Product 4" />
+          <p>T-Shirt</p>
+          <span>৳800</span>
+        </div>
+        <div class="product-card">
+          <img src="images/men5.jpg" alt="Men Product 5" />
+          <p>Shorts</p>
+          <span>৳900</span>
+        </div>
+        <div class="product-card">
+          <img src="images/men6.jpg" alt="Men Product 6" />
+          <p>Sweater</p>
+          <span>৳1500</span>
+        </div>
+        <div class="product-card">
+          <img src="images/men7.jpg" alt="Men Product 7" />
+          <p>Coat</p>
+          <span>৳3500</span>
+        </div>
+        <div class="product-card">
+          <img src="images/men8.jpg" alt="Men Product 8" />
+          <p>Jeans</p>
+          <span>৳1300</span>
+        </div>
+      </div>
+    </section>
 
-  <!-- WOMEN Category -->
-  <div class="category-title">WOMEN</div>
-  <div class="product-row" id="women-row">
-    <div class="product-card">
-      <img src="images/women1.jpg" alt="Women Product 1">
-      <p>Summer Dress</p>
-      <span>৳1690</span>
-    </div>
-    <div class="product-card">
-      <img src="images/women2.jpg" alt="Women Product 2">
-      <p>Top</p>
-      <span>৳990</span>
-    </div>
-    <!-- Repeat up to women8.jpg -->
-  </div>
+    <!-- WOMEN Category -->
+    <section class="category-section" id="women">
+      <h2 class="category-title">WOMEN</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="images/women1.jpg" alt="Women Product 1" />
+          <p>Dress</p>
+          <span>৳1800</span>
+        </div>
+        <div class="product-card">
+          <img src="images/women2.jpg" alt="Women Product 2" />
+          <p>Skirt</p>
+          <span>৳1300</span>
+        </div>
+        <div class="product-card">
+          <img src="images/women3.jpg" alt="Women Product 3" />
+          <p>Blouse</p>
+          <span>৳1100</span>
+        </div>
+        <div class="product-card">
+          <img src="images/women4.jpg" alt="Women Product 4" />
+          <p>Jacket</p>
+          <span>৳2700</span>
+        </div>
+        <div class="product-card">
+          <img src="images/women5.jpg" alt="Women Product 5" />
+          <p>T-Shirt</p>
+          <span>৳900</span>
+        </div>
+        <div class="product-card">
+          <img src="images/women6.jpg" alt="Women Product 6" />
+          <p>Jeans</p>
+          <span>৳1400</span>
+        </div>
+        <div class="product-card">
+          <img src="images/women7.jpg" alt="Women Product 7" />
+          <p>Sweater</p>
+          <span>৳1600</span>
+        </div>
+        <div class="product-card">
+          <img src="images/women8.jpg" alt="Women Product 8" />
+          <p>Coat</p>
+          <span>৳3400</span>
+        </div>
+      </div>
+    </section>
 
-  <!-- KIDS Category -->
-  <div class="category-title">KIDS</div>
-  <div class="product-row" id="kids-row">
-    <div class="product-card">
-      <img src="images/kids1.jpg" alt="Kids Product 1">
-      <p>T-shirt</p>
-      <span>৳590</span>
-    </div>
-    <div class="product-card">
-      <img src="images/kids2.jpg" alt="Kids Product 2">
-      <p>Shorts</p>
-      <span>৳490</span>
-    </div>
-    <!-- Repeat up to kids8.jpg -->
-  </div>
+    <!-- KIDS Category -->
+    <section class="category-section" id="kids">
+      <h2 class="category-title">KIDS</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="images/kids1.jpg" alt="Kids Product 1" />
+          <p>T-shirt</p>
+          <span>৳590</span>
+        </div>
+        <div class="product-card">
+          <img src="images/kids2.jpg" alt="Kids Product 2" />
+          <p>Shorts</p>
+          <span>৳490</span>
+        </div>
+        <div class="product-card">
+          <img src="images/kids3.jpg" alt="Kids Product 3" />
+          <p>Dress</p>
+          <span>৳700</span>
+        </div>
+        <div class="product-card">
+          <img src="images/kids4.jpg" alt="Kids Product 4" />
+          <p>Jacket</p>
+          <span>৳1100</span>
+        </div>
+        <div class="product-card">
+          <img src="images/kids5.jpg" alt="Kids Product 5" />
+          <p>Shirt</p>
+          <span>৳650</span>
+        </div>
+        <div class="product-card">
+          <img src="images/kids6.jpg" alt="Kids Product 6" />
+          <p>Trousers</p>
+          <span>৳600</span>
+        </div>
+        <div class="product-card">
+          <img src="images/kids7.jpg" alt="Kids Product 7" />
+          <p>Sweater</p>
+          <span>৳800</span>
+        </div>
+        <div class="product-card">
+          <img src="images/kids8.jpg" alt="Kids Product 8" />
+          <p>Coat</p>
+          <span>৳1300</span>
+        </div>
+      </div>
+    </section>
 
-  <!-- FRAGRANCE Category -->
-  <div class="category-title">FRAGRANCE</div>
-  <div class="product-row" id="fragrance-row">
-    <div class="product-card">
-      <img src="images/fragrance1.jpg" alt="Fragrance Product 1">
-      <p>Perfume A</p>
-      <span>৳890</span>
-    </div>
-    <div class="product-card">
-      <img src="images/fragrance2.jpg" alt="Fragrance Product 2">
-      <p>Perfume B</p>
-      <span>৳990</span>
-    </div>
-    <!-- Repeat up to fragrance8.jpg -->
-  </div>
+    <!-- FRAGRANCE Category -->
+    <section class="category-section" id="fragrance">
+      <h2 class="category-title">FRAGRANCE</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="images/fragrance1.jpg" alt="Fragrance Product 1" />
+          <p>Perfume A</p>
+          <span>৳890</span>
+        </div>
+        <div class="product-card">
+          <img src="images/fragrance2.jpg" alt="Fragrance Product 2" />
+          <p>Perfume B</p>
+          <span>৳990</span>
+        </div>
+        <div class="product-card">
+          <img src="images/fragrance3.jpg" alt="Fragrance Product 3" />
+          <p>Cologne</p>
+          <span>৳1200</span>
+        </div>
+        <div class="product-card">
+          <img src="images/fragrance4.jpg" alt="Fragrance Product 4" />
+          <p>Body Mist</p>
+          <span>৳750</span>
+        </div>
+        <div class="product-card">
+          <img src="images/fragrance5.jpg" alt="Fragrance Product 5" />
+          <p>Aftershave</p>
+          <span>৳800</span>
+        </div>
+        <div class="product-card">
+          <img src="images/fragrance6.jpg" alt="Fragrance Product 6" />
+          <p>Essential Oil</p>
+          <span>৳950</span>
+        </div>
+        <div class="product-card">
+          <img src="images/fragrance7.jpg" alt="Fragrance Product 7" />
+          <p>Perfume C</p>
+          <span>৳1100</span>
+        </div>
+        <div class="product-card">
+          <img src="images/fragrance8.jpg" alt="Fragrance Product 8" />
+          <p>Perfume D</p>
+          <span>৳1000</span>
+        </div>
+      </div>
+    </section>
 
-  <!-- Link external JS -->
-  <script src="script.js"></script>
+  </main>
 
 </body>
-      </html>
+          </html>
