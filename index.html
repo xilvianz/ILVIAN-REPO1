@@ -6,127 +6,63 @@
   <title>ILVIAN | Dignified Comfort</title>
 
   <style>
-    /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: Helvetica, Arial, sans-serif;
-      background-color: #fff;
-      color: #1F4045;
+      background: #fff;
+      color: #333;
     }
 
     a { text-decoration: none; color: inherit; }
 
-    /* Top Header Bar */
-    .top-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.8rem 1rem;
+    /* Floating Top Icons */
+    .top-icons {
       position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.2); /* transparent */
-      z-index: 1000;
-      color: #fff;
-    }
-
-    .logo {
-      font-weight: bold;
-      font-size: 1.4rem;
-      letter-spacing: 2px;
-    }
-
-    .icons {
+      top: 10px;
+      right: 10px;
       display: flex;
       gap: 1rem;
-      align-items: center;
+      z-index: 1000;
     }
 
-    .icons svg {
-      width: 22px;
-      height: 22px;
-      fill: #fff;
+    .top-icons svg {
+      width: 24px;
+      height: 24px;
+      fill: #333;
       cursor: pointer;
     }
 
-    /* Categories Bar */
-    .categories-bar {
-      display: flex;
-      overflow-x: auto;
-      white-space: nowrap;
-      gap: 1.2rem;
-      padding: 0.6rem 1rem;
+    /* Logo floating top left */
+    .logo {
       position: fixed;
-      top: 56px; /* below top bar */
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.2);
-      z-index: 999;
-      font-weight: 500;
-      font-size: 0.95rem;
-      color: #fff;
+      top: 10px;
+      left: 10px;
+      font-weight: bold;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      z-index: 1000;
     }
 
-    .categories-bar a {
-      display: inline-block;
-      flex: 0 0 auto;
-    }
-
-    .categories-bar a:hover { color: #ddd; }
-
-    /* Hide scrollbar in categories */
-    .categories-bar::-webkit-scrollbar { display: none; }
-    .categories-bar { -ms-overflow-style: none; scrollbar-width: none; }
-
-    /* Hero Banner */
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      background: url('images/hero.jpg') center/cover no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 112px; /* header + categories height */
-    }
-
-    .hero-text {
-      position: absolute;
-      bottom: 10%;
-      text-align: center;
-      padding: 0 20px;
-      color: #fff;
-    }
-
-    .hero-text h1 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-      letter-spacing: 1px;
-    }
-
-    .hero-text p { font-size: 1.1rem; }
-
-    /* Product Sections */
-    section.products {
-      padding: 1rem;
-    }
-
+    /* Category Title */
     .category-title {
       font-weight: bold;
       font-size: 1.2rem;
-      margin: 1rem 0;
+      margin: 70px 0 10px 10px;
     }
 
+    /* Product Carousel */
     .product-row {
       display: flex;
       overflow-x: auto;
-      gap: 1rem;
-      padding-bottom: 1rem;
+      scroll-behavior: smooth;
+      gap: 10px;
+      padding: 10px;
     }
 
     .product-card {
       flex: 0 0 auto;
-      width: 150px;
+      width: 160px;
     }
 
     .product-card img {
@@ -136,113 +72,106 @@
 
     .product-card p {
       text-align: center;
-      font-size: 0.9rem;
-      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      margin-top: 5px;
     }
 
-    /* Hide scrollbar in product row */
+    .product-card span {
+      display: block;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #555;
+    }
+
+    /* Hide scrollbar */
     .product-row::-webkit-scrollbar { display: none; }
     .product-row { -ms-overflow-style: none; scrollbar-width: none; }
-
-    @media (max-width: 768px) {
-      .hero-text h1 { font-size: 1.5rem; }
-      .hero-text p { font-size: 1rem; }
-      .icons svg { width: 20px; height: 20px; }
-    }
   </style>
 </head>
 
 <body>
 
-  <!-- Top Bar -->
-  <div class="top-bar">
-    <div class="logo">ILVIAN</div>
-    <div class="icons">
-      <!-- Search Icon -->
-      <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zM10 14a4 4 0 110-8 4 4 0 010 8z"/></svg>
-      <!-- Account Icon -->
-      <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.2c-3.1 0-9.3 1.6-9.3 4.9v2.7h18.6v-2.7c0-3.3-6.2-4.9-9.3-4.9z"/></svg>
-      <!-- Cart Icon -->
-      <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 2 2 2-.9 2-2-.9-2-2-2zM7.16 14l-.94-2h11.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49-1.68-1L17.44 9H7.21L6.27 6H1v2h3l3.6 7.59-1.35 2.44C5.08 18.37 5 18.68 5 19c0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25L7.16 14z"/></svg>
-      <!-- Menu Icon -->
-      <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
-    </div>
+  <!-- Floating Logo -->
+  <div class="logo">ILVIAN</div>
+
+  <!-- Floating Icons -->
+  <div class="top-icons">
+    <!-- Search Icon -->
+    <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zM10 14a4 4 0 110-8 4 4 0 010 8z"/></svg>
+    <!-- Account Icon -->
+    <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.2c-3.1 0-9.3 1.6-9.3 4.9v2.7h18.6v-2.7c0-3.3-6.2-4.9-9.3-4.9z"/></svg>
+    <!-- Cart Icon -->
+    <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 2 2 2-.9 2-2-.9-2-2-2zM7.16 14l-.94-2h11.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49-1.68-1L17.44 9H7.21L6.27 6H1v2h3l3.6 7.59-1.35 2.44C5.08 18.37 5 18.68 5 19c0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25L7.16 14z"/></svg>
+    <!-- Menu Icon -->
+    <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
   </div>
 
-  <!-- Categories Bar -->
-  <nav class="categories-bar">
-    <a href="#">WOMEN</a>
-    <a href="#">MEN</a>
-    <a href="#">KIDS</a>
-    <a href="#">FRAGRANCE</a>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>DIGNIFIED COMFORT</h1>
-      <p>Explore Summer 2025 Collection from ৳990</p>
+  <!-- MEN Category -->
+  <div class="category-title">MEN</div>
+  <div class="product-row" id="men-row">
+    <div class="product-card">
+      <img src="images/men1.jpg" alt="Men Product 1">
+      <p>Formal Shirt</p>
+      <span>৳1290</span>
     </div>
-  </section>
-
-  <!-- Product Sections -->
-  <section class="products">
-    <!-- MEN -->
-    <div class="category-title">MEN</div>
-    <div class="product-row">
-      <div class="product-card">
-        <img src="images/men1.jpg" alt="Men Product 1">
-        <p>Men's Shirt</p>
-      </div>
-      <div class="product-card">
-        <img src="images/men2.jpg" alt="Men Product 2">
-        <p>Men's Pant</p>
-      </div>
-      <!-- Add more men products -->
+    <div class="product-card">
+      <img src="images/men2.jpg" alt="Men Product 2">
+      <p>T-shirt</p>
+      <span>৳790</span>
     </div>
+    <!-- Repeat up to men8.jpg -->
+  </div>
 
-    <!-- WOMEN -->
-    <div class="category-title">WOMEN</div>
-    <div class="product-row">
-      <div class="product-card">
-        <img src="images/women1.jpg" alt="Women Product 1">
-        <p>Women's Dress</p>
-      </div>
-      <div class="product-card">
-        <img src="images/women2.jpg" alt="Women Product 2">
-        <p>Women's Top</p>
-      </div>
-      <!-- Add more women products -->
+  <!-- WOMEN Category -->
+  <div class="category-title">WOMEN</div>
+  <div class="product-row" id="women-row">
+    <div class="product-card">
+      <img src="images/women1.jpg" alt="Women Product 1">
+      <p>Summer Dress</p>
+      <span>৳1690</span>
     </div>
+    <div class="product-card">
+      <img src="images/women2.jpg" alt="Women Product 2">
+      <p>Top</p>
+      <span>৳990</span>
+    </div>
+    <!-- Repeat up to women8.jpg -->
+  </div>
 
-    <!-- KIDS -->
-    <div class="category-title">KIDS</div>
-    <div class="product-row">
-      <div class="product-card">
-        <img src="images/kids1.jpg" alt="Kids Product 1">
-        <p>Kid's T-shirt</p>
-      </div>
-      <div class="product-card">
-        <img src="images/kids2.jpg" alt="Kids Product 2">
-        <p>Kid's Shorts</p>
-      </div>
-      <!-- Add more kids products -->
+  <!-- KIDS Category -->
+  <div class="category-title">KIDS</div>
+  <div class="product-row" id="kids-row">
+    <div class="product-card">
+      <img src="images/kids1.jpg" alt="Kids Product 1">
+      <p>T-shirt</p>
+      <span>৳590</span>
     </div>
+    <div class="product-card">
+      <img src="images/kids2.jpg" alt="Kids Product 2">
+      <p>Shorts</p>
+      <span>৳490</span>
+    </div>
+    <!-- Repeat up to kids8.jpg -->
+  </div>
 
-    <!-- FRAGRANCE -->
-    <div class="category-title">FRAGRANCE</div>
-    <div class="product-row">
-      <div class="product-card">
-        <img src="images/fragrance1.jpg" alt="Fragrance Product 1">
-        <p>Perfume A</p>
-      </div>
-      <div class="product-card">
-        <img src="images/fragrance2.jpg" alt="Fragrance Product 2">
-        <p>Perfume B</p>
-      </div>
-      <!-- Add more fragrance products -->
+  <!-- FRAGRANCE Category -->
+  <div class="category-title">FRAGRANCE</div>
+  <div class="product-row" id="fragrance-row">
+    <div class="product-card">
+      <img src="images/fragrance1.jpg" alt="Fragrance Product 1">
+      <p>Perfume A</p>
+      <span>৳890</span>
     </div>
-  </section>
+    <div class="product-card">
+      <img src="images/fragrance2.jpg" alt="Fragrance Product 2">
+      <p>Perfume B</p>
+      <span>৳990</span>
+    </div>
+    <!-- Repeat up to fragrance8.jpg -->
+  </div>
+
+  <!-- Link external JS -->
+  <script src="script.js"></script>
 
 </body>
-  </html>
+      </html>
