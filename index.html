@@ -86,6 +86,48 @@
     /* Hide scrollbar */
     .product-row::-webkit-scrollbar { display: none; }
     .product-row { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* HERO BANNER */
+    .hero-banner {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .hero-banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .banner-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+    }
+
+    .banner-text h1 {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .banner-text p {
+      margin: 10px 0;
+      font-size: 1.2rem;
+    }
+
+    .banner-button {
+      display: inline-block;
+      background: #333;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 3px;
+      font-size: 1rem;
+    }
   </style>
 </head>
 
@@ -105,6 +147,16 @@
     <!-- Menu Icon -->
     <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
   </div>
+
+  <!-- HERO BANNER -->
+  <section class="hero-banner">
+    <img src="images/banner.jpg" alt="ILVIAN Promotional Banner">
+    <div class="banner-text">
+      <h1>Dignified Comfort</h1>
+      <p>Explore Our New Arrivals</p>
+      <a href="#men-row" class="banner-button">Shop Now</a>
+    </div>
+  </section>
 
   <!-- MEN Category -->
   <div class="category-title">MEN</div>
@@ -174,4 +226,4 @@
   <script src="script.js"></script>
 
 </body>
-        </html>
+    </html>
