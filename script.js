@@ -51,3 +51,46 @@ tabs.forEach(tab => {
 
 // Initial load MEN category
 loadCategory('men');
+document.addEventListener("DOMContentLoaded", function() {
+  const searchIcon = document.getElementById("searchIcon");
+  const searchInput = document.getElementById("searchInput");
+  const productCards = document.querySelectorAll(".product-card");
+
+  searchIcon.addEventListener("click", () => {
+    if (searchInput.style.display === "none" || searchInput.style.display === "") {
+      searchInput.style.display = "inline-block";
+      searchInput.focus();
+    } else {
+      searchInput.style.display = "none";
+    }
+  });
+
+  searchInput.addEventListener("keyup", () => {
+    const filter = searchInput.value.toLowerCase();
+    let found = false;
+
+    productCards.forEach(card => {
+      const name = card.querySelector("p").textContent.toLowerCase();
+      if (name.includes(filter)) {
+        card.style.display = "";
+        found = true;
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    if (!found) {
+      if (!document.getElementById("notFound")) {
+        const nf = document.createElement("div");
+        nf.id = "notFound";
+        nf.textContent = "No product found.";
+        nf.style.textAlign = "center";
+        nf.style.marginTop = "20px";
+        document.body.appendChild(nf);
+      }
+    } else {
+      const nf = document.getElementById("notFound");
+      if (nf) nf.remove();
+    }
+  });
+});
