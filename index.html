@@ -16,13 +16,13 @@
 
     a { text-decoration: none; color: inherit; }
 
+    /* Floating Top Icons */
     .top-icons {
       position: fixed;
       top: 10px;
       right: 10px;
       display: flex;
       gap: 1rem;
-      align-items: center;
       z-index: 1000;
     }
 
@@ -33,13 +33,7 @@
       cursor: pointer;
     }
 
-    #searchInput {
-      display: none;
-      padding: 5px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-    }
-
+    /* Logo + brand floating top left */
     .logo {
       position: fixed;
       top: 10px;
@@ -62,18 +56,17 @@
       color: #333;
     }
 
+    /* Floating Category Bar */
     .category-bar {
-      position: fixed;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 10px 0;
-      z-index: 999;
-      background: white;
-      border-bottom: 1px solid #eee;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 10px 0;
+  z-index: 999;
     }
 
     .category-bar a {
@@ -82,9 +75,12 @@
       color: #333;
     }
 
+    /* HERO BANNER */
     .hero-banner {
-      margin-top: 110px;
+      position: relative;
       width: 100%;
+      overflow: hidden;
+      margin-top: 110px;
     }
 
     .hero-banner img {
@@ -93,20 +89,51 @@
       display: block;
     }
 
-    .category-products {
-      padding: 20px 10px;
+    .banner-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
     }
 
+    .banner-text h1 {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .banner-text p {
+      margin: 10px 0;
+      font-size: 1.2rem;
+    }
+
+    .banner-button {
+      display: inline-block;
+      background: #333;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 3px;
+      font-size: 1rem;
+    }
+
+    /* Category Title */
     .category-title {
       font-weight: bold;
       font-size: 1.2rem;
-      margin-bottom: 10px;
+      margin: 20px 0 10px 10px;
     }
 
+    /* Product Rows */
     .product-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 10px;
+      display: block;
+      padding: 0;
+    }
+
+    .product-card {
+      width: 100%;
+      margin-bottom: 10px;
     }
 
     .product-card img {
@@ -114,42 +141,39 @@
       border-radius: 5px;
     }
 
-    .product-card p {
+    .product-card p, .product-card span {
       text-align: center;
+    }
+
+    .product-card p {
+      font-size: 1rem;
       margin-top: 5px;
-      font-size: 0.95rem;
     }
 
     .product-card span {
-      display: block;
-      text-align: center;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: #555;
-    }
-
-    #notFound {
-      text-align: center;
-      margin-top: 20px;
-      font-weight: bold;
     }
   </style>
 </head>
 
 <body>
 
+  <!-- Floating Logo + Brand Name -->
   <div class="logo">
     <img src="images/logo.png" alt="ILVIAN Logo">
     <span>ILVIAN</span>
   </div>
 
+  <!-- Floating Icons -->
   <div class="top-icons">
-    <svg id="searchIcon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zM10 14a4 4 0 110-8 4 4 0 010 8z"/></svg>
-    <input type="text" id="searchInput" placeholder="Search...">
-    <svg viewBox="0 0 24 24"><path d="..."/></svg>
-    <svg viewBox="0 0 24 24"><path d="..."/></svg>
-    <svg viewBox="0 0 24 24"><path d="..."/></svg>
+    <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zM10 14a4 4 0 110-8 4 4 0 010 8z"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.2c-3.1 0-9.3 1.6-9.3 4.9v2.7h18.6v-2.7c0-3.3-6.2-4.9-9.3-4.9z"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 2 2 2-.9 2-2-.9-2-2-2zM7.16 14l-.94-2h11.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49-1.68-1L17.44 9H7.21L6.27 6H1v2h3l3.6 7.59-1.35 2.44C5.08 18.37 5 18.68 5 19c0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25L7.16 14z"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
   </div>
 
+  <!-- Floating Category Bar -->
   <div class="category-bar">
     <a href="#men-products">MEN</a>
     <a href="#women-products">WOMEN</a>
@@ -157,14 +181,20 @@
     <a href="#fragrance-products">FRAGRANCE</a>
   </div>
 
+  <!-- HERO BANNER -->
   <section class="hero-banner">
-    <img src="images/banner.jpg" alt="ILVIAN Banner">
+    <img src="images/banner.jpg" alt="ILVIAN Promotional Banner">
+    <div class="banner-text">
+      <h1>Dignified Comfort</h1>
+      <p>Explore Our New Arrivals</p>
+      <a href="#men-products" class="banner-button">Shop Now</a>
+    </div>
   </section>
 
   <!-- MEN PRODUCTS -->
   <div class="category-products" id="men-products">
     <div class="category-title">MEN</div>
-    <div class="product-row">
+    <div class="product-row" id="men-row">
       <div class="product-card"><img src="images/men1.jpg"><p>Formal Shirt</p><span>৳1290</span></div>
       <div class="product-card"><img src="images/men2.jpg"><p>Basic T-shirt</p><span>৳790</span></div>
       <div class="product-card"><img src="images/men3.jpg"><p>Polo Shirt</p><span>৳990</span></div>
@@ -179,7 +209,7 @@
   <!-- WOMEN PRODUCTS -->
   <div class="category-products" id="women-products">
     <div class="category-title">WOMEN</div>
-    <div class="product-row">
+    <div class="product-row" id="women-row">
       <div class="product-card"><img src="images/women1.jpg"><p>Summer Dress</p><span>৳1690</span></div>
       <div class="product-card"><img src="images/women2.jpg"><p>Top</p><span>৳990</span></div>
       <div class="product-card"><img src="images/women3.jpg"><p>Skirt</p><span>৳1290</span></div>
@@ -194,7 +224,7 @@
   <!-- KIDS PRODUCTS -->
   <div class="category-products" id="kids-products">
     <div class="category-title">KIDS</div>
-    <div class="product-row">
+    <div class="product-row" id="kids-row">
       <div class="product-card"><img src="images/kids1.jpg"><p>T-shirt</p><span>৳590</span></div>
       <div class="product-card"><img src="images/kids2.jpg"><p>Shorts</p><span>৳490</span></div>
       <div class="product-card"><img src="images/kids3.jpg"><p>Polo</p><span>৳690</span></div>
@@ -207,52 +237,21 @@
   </div>
 
   <!-- FRAGRANCE PRODUCTS -->
-  <div class="category-products" id="fragrance-products">
-    <div class="category-title">FRAGRANCE</div>
-    <div class="product-row">
-      <div class="product-card"><img src="images/fragrance1.jpg"><p>Oud Al Noor</p><span>৳1890</span></div>
-      <div class="product-card"><img src="images/fragrance2.jpg"><p>Musk Tahara</p><span>৳990</span></div>
-      <div class="product-card"><img src="images/fragrance3.jpg"><p>Amber Sultani</p><span>৳1290</span></div>
-      <div class="product-card"><img src="images/fragrance4.jpg"><p>White Oud</p><span>৳1490</span></div>
-      <div class="product-card"><img src="images/fragrance5.jpg"><p>Rose Musk</p><span>৳890</span></div>
-      <div class="product-card"><img src="images/fragrance6.jpg"><p>Attar Jasmine</p><span>৳990</span></div>
-      <div class="product-card"><img src="images/fragrance7.jpg"><p>Black Musk</p><span>৳1190</span></div>
-      <div class="product-card"><img src="images/fragrance8.jpg"><p>Dehn Al Oudh</p><span>৳1590</span></div>
-    </div>
+<div class="category-products" id="fragrance-products">
+  <div class="category-title">FRAGRANCE</div>
+  <div class="product-row" id="fragrance-row">
+    <div class="product-card"><img src="images/fragrance1.jpg"><p>Oud Al Noor</p><span>৳1890</span></div>
+    <div class="product-card"><img src="images/fragrance2.jpg"><p>Musk Tahara</p><span>৳990</span></div>
+    <div class="product-card"><img src="images/fragrance3.jpg"><p>Amber Sultani</p><span>৳1290</span></div>
+    <div class="product-card"><img src="images/fragrance4.jpg"><p>White Oud</p><span>৳1490</span></div>
+    <div class="product-card"><img src="images/fragrance5.jpg"><p>Rose Musk</p><span>৳890</span></div>
+    <div class="product-card"><img src="images/fragrance6.jpg"><p>Attar Jasmine</p><span>৳990</span></div>
+    <div class="product-card"><img src="images/fragrance7.jpg"><p>Black Musk</p><span>৳1190</span></div>
+    <div class="product-card"><img src="images/fragrance8.jpg"><p>Dehn Al Oudh</p><span>৳1590</span></div>
+  </div>
   </div>
 
-  <script>
-    const searchIcon = document.getElementById("searchIcon");
-    const searchInput = document.getElementById("searchInput");
-
-    searchIcon.addEventListener("click", () => {
-      searchInput.style.display = searchInput.style.display === "none" || searchInput.style.display === "" ? "inline-block" : "none";
-      if (searchInput.style.display === "inline-block") searchInput.focus();
-    });
-
-    searchInput.addEventListener("keyup", () => {
-      const filter = searchInput.value.toLowerCase();
-      const productCards = document.querySelectorAll(".product-card");
-      let found = false;
-
-      productCards.forEach(card => {
-        const name = card.querySelector("p").textContent.toLowerCase();
-        card.style.display = name.includes(filter) ? "" : "none";
-        if (name.includes(filter)) found = true;
-      });
-
-      if (!found) {
-        if (!document.getElementById("notFound")) {
-          const nf = document.createElement("div");
-          nf.id = "notFound";
-          nf.textContent = "No product found.";
-          document.body.appendChild(nf);
-        }
-      } else {
-        const nf = document.getElementById("notFound");
-        if (nf) nf.remove();
-      }
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
-</html>
+                                  </html>
+                                  
